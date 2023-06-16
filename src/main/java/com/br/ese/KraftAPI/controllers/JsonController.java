@@ -1,15 +1,12 @@
 package com.br.ese.KraftAPI.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/json")
 public class JsonController {
 
-    @GetMapping
+    @PostMapping
     public String json(@RequestBody String json) {
         return json;
     }

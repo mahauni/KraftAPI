@@ -6,7 +6,7 @@ services:
     restart: always
     container_name: kraft-api
     build:
-      context: ./src
+      context: .
     expose:
       - 8080
 
