@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  api:
+    image: kraft-api
+    restart: always
+    container_name: kraft-api
+    build:
+      context: ./src
+    expose:
+      - 8080
+
+  nginx:
+    image: custom-nginx
+    restart: always
+    container_name: custom-nginx
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
