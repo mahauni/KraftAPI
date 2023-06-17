@@ -1,4 +1,4 @@
-package com.br.ese.KraftAPI.controllers;
+package br.com.ese.KraftAPI.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

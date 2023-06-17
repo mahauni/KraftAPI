@@ -1,4 +1,4 @@
-package com.br.ese.KraftAPI;
+package br.com.ese.KraftAPI;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

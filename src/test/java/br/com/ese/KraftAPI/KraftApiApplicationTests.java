@@ -1,4 +1,4 @@
-package com.br.ese.KraftAPI;
+package br.com.ese.KraftAPI;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
