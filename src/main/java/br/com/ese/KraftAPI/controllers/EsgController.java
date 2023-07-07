@@ -3,9 +3,7 @@ package br.com.ese.KraftAPI.controllers;
 import br.com.ese.esgManager.database.DAO.EsgDAO;
 import br.com.ese.esgManager.javaBeans.jbESG;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.sql.SQLException;
@@ -30,4 +28,18 @@ public class EsgController {
 
         return esgs;
     }
+
+    @PostMapping
+    public String postEsg(@RequestBody jbESG esg) {
+        try {
+            EsgDAO dao = new EsgDAO();
+            dao.insert(esg);
+        } catch (SQLException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+
+        return "ESG inserted with success!";
+    }
+
+
 }

@@ -1,8 +1,8 @@
 FROM eclipse-temurin:17-jdk-alpine
-# add bash for debug and dev processes
-# comment out later
-RUN apk add bash
-COPY target/KraftAPI-0.0.1-SNAPSHOT.jar /app/KraftAPI.jar
+COPY target/KraftAPI-1.0.jar /app/KraftAPI.jar
+ENV url=jdbc:postgresql://postgres:5432/root
+ENV passwd=password
+ENV user=admin
 WORKDIR /app
 ENTRYPOINT ["java", "-jar", "KraftAPI.jar"]
 EXPOSE 8080

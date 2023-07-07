@@ -15,6 +15,6 @@ services:
     restart: always
     container_name: custom-nginx
     build:
-      context: ./nginx
+      context: ../KraftApp/nginx
     ports:
       - "80:80"
