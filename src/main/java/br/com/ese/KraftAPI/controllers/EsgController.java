@@ -41,5 +41,41 @@ public class EsgController {
         return "ESG inserted with success!";
     }
 
+    @DeleteMapping("/{id}")
+    public String deleteEsg(@PathVariable int id) {
+        try {
+            EsgDAO dao = new EsgDAO();
+            dao.delete(id);
+        } catch (SQLException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
 
+        return "ESG Deleted with success!";
+    }
+
+    @GetMapping("/{id}")
+    public jbESG getEsgById(@PathVariable int id) {
+        jbESG esg = null;
+        try {
+            EsgDAO dao = new EsgDAO();
+            esg = dao.selectById(id);
+
+        } catch (SQLException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+
+        return esg;
+    }
+
+    @PutMapping
+    public String updateEsg(@RequestBody jbESG jbESG) {
+        try {
+            EsgDAO dao = new EsgDAO();
+            dao.update(jbESG);
+        } catch (SQLException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+
+        return "ESG updated with success!";
+    }
 }
